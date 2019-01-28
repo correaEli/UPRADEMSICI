@@ -1,0 +1,49 @@
+*{
+    font-size: 1.02em;
+}
+main {
+    margin-top: 50px;
+}
+.table {
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+.Row1{
+     min-height: 250px;
+     border-style: solid;
+}
+.Row2{
+     height: 100%;
+     min-height: 450px;
+    border-style: solid;
+}
+.Col {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.Title, .Info, .SubInfo, .Sub2Info, .Sub3Info{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    float: left;
+    margin-top: 10px;
+}
+.Title{
+    text-align: center;
+    font-style: oblique;
+    font-weight: bold;
+}
+.Info{
+    padding-left: 15%;
+}
+.SubInfo {
+    padding-left: 20%;
+}
+.Sub2Info {
+    padding-left: 25%;
+}
+.Sub3Info {
+    padding-left: 30%;
+}
