@@ -1,8 +1,8 @@
 <?php
 $dbHostname = 'localhost';
-$dbDatabase = 'id3608597_assessmentdb';
-$dbUsername = 'id3608597_elicorrea';
-$dbPassword = '1234567890';
+$dbDatabase = 'WebAssessment';
+$dbUsername = 'root';
+$dbPassword = '';
 $db = new PDO("mysql:host=$dbHostname;dbname=$dbDatabase;charset=utf8", $dbUsername, $dbPassword);
 function getResultFromSQL($sql, $values = []) {
     

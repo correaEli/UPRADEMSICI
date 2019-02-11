@@ -2,48 +2,90 @@
     font-size: 1.02em;
 }
 main {
-    margin-top: 50px;
+    margin-top: 0px;
 }
-.table {
-    width: 80%;
-    height: auto;
-    margin: auto;
+.panel{
+
 }
-.Row1{
-     min-height: 250px;
-     border-style: solid;
-}
-.Row2{
-     height: 100%;
-     min-height: 450px;
-    border-style: solid;
-}
-.Col {
-    width: 50%;
-    height: 100%;
-    float: left;
-}
-.Title, .Info, .SubInfo, .Sub2Info, .Sub3Info{
-    width: 100%;
-    height: auto;
-    background-color: white;
-    float: left;
-    margin-top: 10px;
-}
-.Title{
-    text-align: center;
-    font-style: oblique;
-    font-weight: bold;
-}
-.Info{
-    padding-left: 15%;
-}
-.SubInfo {
-    padding-left: 20%;
-}
-.Sub2Info {
-    padding-left: 25%;
-}
-.Sub3Info {
-    padding-left: 30%;
-}
+.botones{
+        width:25%;
+        height:40vw;
+        float:left;
+        display:block;
+        background-color: rgba(180,99,9,1.00);
+        text-align:center;
+        list-style:none;
+        
+    }
+    .botones a{
+        color: white;
+        font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+        text-decoration: none;
+    }
+
+.botones:hover{
+        background-color:rgba(231,200,71,1.00);
+    }
+	
+.botones:active{
+        background-color: yellow;
+    }
+    
+.botones_log{
+        width:150px;
+        height:30px;
+        float:left;
+        padding-top:  10px;
+        display:block;
+        background-color: rgba(180,99,9,1.00);
+        text-align:center;
+        list-style:none;
+        z-index:98;
+        color: white;
+        font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+        text-decoration: none;
+    }
+    
+    /******************************ASSESSMENT BODY**************************************/
+    .Container{
+        width: 80%;
+        height: 40vw;
+        min-height: 510px;
+        max-height: 40vw;
+        float: left;
+        display: block;
+        background-color: grey;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .Title { text-align: center;}
+    .Title a { text-transform:uppercase; }
+    .SubInfo{
+        
+    }
+    .BTN{
+        width: 30%;
+        height: fix-contemt;
+        border-width: 5px;
+        border-color: red;
+    }
+    .BTN2{
+        width: 100%;
+        height: fix-contemt;
+        border-width: 5px;
+        border-color: red;
+    }
+    .Collapse{
+        width: 100%;
+        height: 0px;
+        background-color: green;
+        overflow:hidden;
+    }
+     .Collapse2{
+        width: 100%;
+        height: 0px;
+        background-color: green;
+        overflow:hidden;
+    }
+    /******************************ASSESSMENT BODY**************************************/
+    /******************************ASSESSMENT BODY**************************************/
