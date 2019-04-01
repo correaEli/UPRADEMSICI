@@ -10,17 +10,27 @@ body{
 					background-color: white;
 		}
 /*------------------------------------------------------------------------------------------------------------*/
-.Nav h1{
+.Nav h3{
 					float:left;
 					color: white;
+					padding-left: 15px;
 		}
-.Nav, .barStatus {
-					width: 50%;
+.Nav{
+					width: 85%;
+					height: auto;
 					float: left;
-					margin-top: 15PX;
+					margin-top: -10PX;
+		}
+.barStatus{
+					width: 15%;
+					height: auto;
+					float: left;
+					margin-top: 10PX;
+					
 		}
 a.botones_log {
 					float: right;
+					width: 100%;
 					margin-right: 20px;
 		}
 

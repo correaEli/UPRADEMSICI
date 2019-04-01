@@ -13,22 +13,6 @@ if ($action == 'login') {
             session_destroy();
             $i='';
             header('Location: index.php');
-}else if ($action == 'goRegister') {
-        $u = User::loadFromUsername($_POST['username']);
-    if ($u) {
-        showError('The username already exist.');
-        include './Parts/register.php';
-    } else {
-        $u = new User();
-        
-        $u->username = $_POST['username'];
-        $u->password = $_POST['password1'];
-        $u->first_name = $_POST['first_name'];
-          $u->last_name = $_POST['last_name'];
-        $u->email = $_POST['email'];
-        
-        $u->save();
-    }
 } else if ($action == 'doLogin') {
     $u = User::loadFromUsername($_POST['username']);
         
@@ -77,11 +61,11 @@ if ($action == 'login') {
                 include './parts/WEB-BACE/DOCUMENTS-FILE.php';      
 
 } else {
-   /* if (empty($_SESSION)) {
+   if (empty($_SESSION)) {
                 $action='login';
                 include './parts/Login.php';
-        }else {*/
-    include './parts/body.php';
+        }else {
+    include './parts/body.php';}
 }
 //*****************************************************************
 

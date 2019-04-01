@@ -13,8 +13,8 @@ class BAP {
     Public $Success;
 
     
-   public static function loadFromInfomation($id) {
-$records = getResultFromSQL('SELECT * FROM avaluo WHERE id = ?', [$id]);        
+   public static function loadFromInfomation($studentsLO) {
+         $records = getResultFromSQL('SELECT * FROM avaluo WHERE `studentsLO`=?', [$studentsLO]);        
        if (count($records) == 0) {
             return null;
         }
@@ -33,11 +33,9 @@ $records = getResultFromSQL('SELECT * FROM avaluo WHERE id = ?', [$id]);
         $u->dirOind = $record['Direct/Indirect'];
         $u->intOext = $record['External/Internal'];
         $u->Success = $record['Success_Indicator'];
-        return $u;
-    }
+        return $u;    }
     
-    public static function loadFromDATA($studentsLO) {$records = getResultFromSQL('SELECT `ID`,`studentsLO`,`SLO_INFORMATION` FROM `avaluo`WHERE `studentsLO`=?', [$studentsLO]);    
-       if (count($records) == 0) {
+    public static function loadFromDATA($studentsLO) {         $records = getResultFromSQL('SELECT `ID`,`studentsLO`,`SLO_INFORMATION` FROM `avaluo`WHERE `studentsLO`=?', [$studentsLO]);           if (count($records) == 0) {
             return null;
         }
         $record = $records[0];
