@@ -1,0 +1,21 @@
+.col-sm-6 form{
+    background-color:gray;
+    border-bottom-right-radius:25px;
+    border-bottom-left-radius:25px;
+    padding:25px;
+
+}
+.rowform{
+    height:90vh;
+    padding-top:10%;
+}
+.titleform{
+    height: 50px;
+    text-align: center;
+    background-color: red;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.titleform lable{
+    padding: 25px;
+}

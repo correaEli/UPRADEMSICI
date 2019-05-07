@@ -11,6 +11,7 @@ $uname = $_POST['username'] ?? '';
           &nbsp;
         </div>
         <div class="col-sm-6">
+          <div class="titleform"><lable>Welcome</lable></div>
             <form method="post" action="index.php?a=doLogin">
               <div class="form-group">
                 <label for="username">Username</label>

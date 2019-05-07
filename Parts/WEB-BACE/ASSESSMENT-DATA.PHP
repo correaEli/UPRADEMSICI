@@ -8,22 +8,22 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
         </div>
             <!-- Info -->
             <div class="Info">
-              <a><button type="button" class="BTN" >Assessment plan</button></a>
+              <a><button type="button" class="BTN" ID="BTN1" >Assessment plan</button></a>
             </div>
             <div class="Info">
-              <a><button type="button" class="BTN" >Assessment Report</button></a>
+              <a><button type="button" class="BTN" ID="BTN1">Assessment Report</button></a>
             </div>
             <!-- Info -->
             
 
                 <div class="SubInfo">
-                    <a><button type="button" class="BTN" data-toggle="collapse" data-target="#DATA">Learning Outcomes (BAP)</button></a> 
+                    <a><button type="button" class="BTN" ID="BTN1" data-toggle="collapse" data-target="#DATA">Learning Outcomes (BAP)</button></a> 
                      
                 </div>
         <div id="DATA" class="collapse">
             <!-- Info -->
                     <div class="Sub2Info">
-                      <a href="index.php?b=1A"><button type="button" class="BTN2" > 1A:
+                      <a href="index.php?b=1A"><button type="button" class="BTN" ID="BTN2"> 1A:
                       <?php
                        $u = BAP::loadFromData('1A');
                        echo $u->SLO;
@@ -32,7 +32,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                     <div class="Sub2Info">
-                      <a href="index.php?b=1B"><button type="button" class="BTN2" > 1B:
+                      <a href="index.php?b=1B"><button type="button" class="BTN" ID="BTN2"> 1B:
                       <?php
                        $u = BAP::loadFromData('1B');
                        echo $u->SLO;
@@ -41,7 +41,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                     <div class="Sub2Info">
-                      <a href="index.php?b=2A"><button type="button" class="BTN2" > 2A:
+                      <a href="index.php?b=2A"><button type="button" class="BTN" ID="BTN2"> 2A:
                       <?php
                        $u = BAP::loadFromData('2A');
                        echo $u->SLO;
@@ -50,7 +50,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                     <div class="Sub2Info">
-                      <a href="index.php?b=2B"><button type="button" class="BTN2" > 2B:
+                      <a href="index.php?b=2B"><button type="button" class="BTN" ID="BTN2"> 2B:
                       <?php
                        $u = BAP::loadFromData('2B');
                        echo $u->SLO;
@@ -59,7 +59,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                    <div class="Sub2Info">
-                      <a href="index.php?b=3A"><button type="button" class="BTN2" > 3A:
+                      <a href="index.php?b=3A"><button type="button" class="BTN" ID="BTN2"> 3A:
                       <?php
                        $u = BAP::loadFromData('3A');
                        echo $u->SLO;
@@ -68,7 +68,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                    <div class="Sub2Info">
-                      <a href="index.php?b=4A"><button type="button" class="BTN2" > 4A:
+                      <a href="index.php?b=4A"><button type="button" class="BTN" ID="BTN2" > 4A:
                       <?php
                        $u = BAP::loadFromData('4A');
                        echo $u->SLO;
@@ -77,7 +77,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                     <div class="Sub2Info">
-                      <a href="index.php?b=4B"><button type="button" class="BTN2" > 4B:
+                      <a href="index.php?b=4B"><button type="button" class="BTN" ID="BTN2" > 4B:
                       <?php
                        $u = BAP::loadFromData('4B');
                        echo $u->SLO;
@@ -86,7 +86,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                     <div class="Sub2Info">
-                      <a href="index.php?b=5A"><button type="button" class="BTN2" > 5A:
+                      <a href="index.php?b=5A"><button type="button" class="BTN" ID="BTN2" > 5A:
                       <?php
                        $u = BAP::loadFromData('5A');
                        echo $u->SLO;
@@ -95,9 +95,9 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                     <div class="Sub2Info">
-                      <a href="index.php?b=6A"><button type="button" class="BTN2" > 6A:
+                      <a href="index.php?b=6A"><button type="button" class="BTN" ID="BTN2" > 6A:
                       <?php
-                       $u = BAP::loadFromData('A');
+                       $u = BAP::loadFromData('6A');
                        echo $u->SLO;
                      ?>
                        </button></a>
@@ -105,11 +105,11 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
             <!-- Info -->
         </div>
                 <div class="SubInfo">
-                    <a><button type="button" class="BTN" >ALL Outcomes Survey</button></a>
+                    <a><button type="button" class="BTN" ID="BTN1" >ALL Outcomes Survey</button></a>
                 </div>
             <!-- Info -->
              <div class="SubInfo">
-                <a><button type="button" class="BTN" data-toggle="collapse" data-target="#DATA2">Learning OutComes by Mayor</button></a>
+                <a><button type="button" class="BTN" ID="BTN1" data-toggle="collapse" data-target="#DATA2">Learning OutComes by Mayor</button></a>
             </div>
             <!-- Info -->
         
@@ -119,7 +119,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                             <div class="Sub2Info">
-                      <a href="index.php?b=1A"><button type="button" class="BTN2" > 1A:
+                      <a href="index.php?b=1A"><button type="button" class="BTN" ID="BTN2" > 1A:
                       <?php
                        $u = BAP::loadFromData('1A');
                        echo $u->SLO;
@@ -128,7 +128,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                             <div class="Sub2Info">
-                      <a href="index.php?b=1A"><button type="button" class="BTN2" > 1B:
+                      <a href="index.php?b=1A"><button type="button" class="BTN" ID="BTN2" > 1B:
                       <?php
                        $u = BAP::loadFromData('1A');
                        echo $u->SLO;
@@ -141,7 +141,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                             <div class="Sub2Info">
-                      <a href="index.php?b=1A"><button type="button" class="BTN2" > 1A:
+                      <a href="index.php?b=1A"><button type="button" class="BTN" ID="BTN2" > 1A:
                       <?php
                        $u = BAP::loadFromData('1A');
                        echo $u->SLO;
@@ -150,7 +150,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                            <div class="Sub2Info">
-                      <a href="index.php?b=1A"><button type="button" class="BTN2" > 1B:
+                      <a href="index.php?b=1A"><button type="button" class="BTN" ID="BTN2" > 1B:
                       <?php
                        $u = BAP::loadFromData('1A');
                        echo $u->SLO;
@@ -163,7 +163,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                             <div class="Sub2Info">
-                      <a href="index.php?b=1A"><button type="button" class="BTN2" > 1A:
+                      <a href="index.php?b=1A"><button type="button" class="BTN" ID="BTN2" > 1A:
                       <?php
                        $u = BAP::loadFromData('1A');
                        echo $u->SLO;
@@ -172,7 +172,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                             <div class="Sub2Info">
-                      <a href="index.php?b=1A"><button type="button" class="BTN2" > 1B:
+                      <a href="index.php?b=1A"><button type="button" class="BTN" ID="BTN2" > 1B:
                       <?php
                        $u = BAP::loadFromData('1A');
                        echo $u->SLO;
@@ -185,7 +185,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                             <div class="Sub2Info">
-                      <a href="index.php?b=1A"><button type="button" class="BTN2" > 1A:
+                      <a href="index.php?b=1A"><button type="button" class="BTN" ID="BTN2"> 1A:
                       <?php
                        $u = BAP::loadFromData('1A');
                        echo $u->SLO;
@@ -194,7 +194,7 @@ $action = (isset($_GET['b'])) ? $_GET['b'] : '';
                     </div>
             <!-- Info -->
                             <div class="Sub2Info">
-                      <a href="index.php?b=1A"><button type="button" class="BTN2" > 1B:
+                      <a href="index.php?b=1A"><button type="button" class="BTN" ID="BTN2" > 1B:
                       <?php
                        $u = BAP::loadFromData('1A');
                        echo $u->SLO;
