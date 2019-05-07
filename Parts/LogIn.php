@@ -4,8 +4,8 @@
 $uname = $_POST['username'] ?? '';
 
 ?>
-  <div class="ContenidoLogReg">
-    <div>
+   <div class="ContenidoLogReg">
+     <div>
       <div class="rowform">
         <div class="col-sm-3">
           &nbsp;

@@ -1,12 +1,34 @@
 <?php
+    $maxSessionTime = 60 * 30; //30 minutes
     $action = (isset($_GET['a'])) ? $_GET['a'] : '';
     $search = (isset($_GET['b'])) ? $_GET['b'] : '';
     session_start();
     date_default_timezone_set('EST');
     include 'DB.php';
     include './Class/Class.php';
+/************************************************************************************************************/
+if (isset($_SESSION['userID'])) {
+    $loggedUser = User::loadFromID($_SESSION['userID']);
+    
+    if (is_null($loggedUser)) {
+        session_destroy();
+        session_start();
+    } else {
+        if ((time() - $_SESSION['loginTime']) >= $maxSessionTime) {
+            session_destroy();
+            session_start();
+            $loggedUser = null;
+        } else if ($_SESSION['loginIP'] != $_SERVER['REMOTE_ADDR']) {
+            session_destroy();
+            session_start();
+            $loggedUser = null;
+            //showError('Unauthorized access! Session destroyed!');
+        }
+    }
+}
+/************************************************************************************************************/
     include './Parts/Header.php';
- /************************************************************************************************************/
+/************************************************************************************************************/
 if ($action == 'login') {
         include './parts/Login.php';
 } else if ($action == 'logout') {
@@ -17,7 +39,7 @@ if ($action == 'login') {
     $u = User::loadFromUsername($_POST['username']);
         
         if (is_null($u)) {
-                showError('The user doesn\'t exist.');
+                //showError('The user doesn\'t exist.');
                 include './parts/Login.php';
         } else if ($u->validatePassword($_POST['password'])) {
                 $loggedUser= $u;
@@ -30,36 +52,37 @@ if ($action == 'login') {
                 include './parts/Login.php';
         }
 } else if ($action == 'goUPRP-information') {
-        /*if (empty($_SESSION)) {
+        if (empty($_SESSION)) {
                 showError('pleass log in.');
                 include './parts/Login.php';
-        }else {*/
+        }else {
                 include './parts/MENU.php';
                 include './parts/WEB-BACE/UPRP-INFORMATION.php';
-        
+        }
 }else if ($action == 'goUPRP-PI') {
-        /*if (empty($_SESSION)) {
+        if (empty($_SESSION)) {
                 showError('pleass log in.');
                 include './parts/Login.php';
-        }else {*/
+        }else {
                 include './parts/MENU.php';
                 include './parts/WEB-BACE/UPRP-PROGRAM-INFORMATION.php';
-                
+        }   
 }else if ($action == 'goAssesmentData') {
-        /*if (empty($_SESSION)) {
+        if (empty($_SESSION)) {
                 showError('pleass log in.');
                 include './parts/Login.php';
-        }else {*/
+        }else {
                 include './parts/MENU.php';
                 include './parts/WEB-BACE/ASSESSMENT-DATA.php';
+        }
   }else if ($action == 'goDOC') {
-        /*if (empty($_SESSION)) {
+        if (empty($_SESSION)) {
                 showError('pleass log in.');
                 include './parts/Login.php';
-        }else {*/
+        }else {
                 include './parts/MENU.php';
                 include './parts/WEB-BACE/DOCUMENTS-FILE.php';      
-
+        }
 } else {
    if (empty($_SESSION)) {
                 $action='login';
@@ -67,8 +90,6 @@ if ($action == 'login') {
         }else {
     include './parts/body.php';}
 }
-//*****************************************************************
-
 //*****************************************************************
 include './parts/footer.php';
 ?> 
