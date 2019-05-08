@@ -53,7 +53,6 @@ if ($action == 'login') {
         }
 } else if ($action == 'goUPRP-information') {
         if (empty($_SESSION)) {
-                showError('pleass log in.');
                 include './parts/Login.php';
         }else {
                 include './parts/MENU.php';
@@ -61,7 +60,6 @@ if ($action == 'login') {
         }
 }else if ($action == 'goUPRP-PI') {
         if (empty($_SESSION)) {
-                showError('pleass log in.');
                 include './parts/Login.php';
         }else {
                 include './parts/MENU.php';
@@ -69,27 +67,41 @@ if ($action == 'login') {
         }   
 }else if ($action == 'goAssesmentData') {
         if (empty($_SESSION)) {
-                showError('pleass log in.');
                 include './parts/Login.php';
         }else {
                 include './parts/MENU.php';
                 include './parts/WEB-BACE/ASSESSMENT-DATA.php';
         }
-  }else if ($action == 'goDOC') {
+}else if ($action == 'goDOC') {
         if (empty($_SESSION)) {
-                showError('pleass log in.');
                 include './parts/Login.php';
         }else {
                 include './parts/MENU.php';
                 include './parts/WEB-BACE/DOCUMENTS-FILE.php';      
         }
-} else {
-   if (empty($_SESSION)) {
-                $action='login';
+}else if ($action == 'goREPORT') {
+        if (empty($_SESSION)) {
                 include './parts/Login.php';
         }else {
-    include './parts/body.php';}
+                include './parts/MENU.php';
+                include './parts/WEB-BACE/PAGE-REPORT/ASSESSMENT-REPORT.PHP';
+        }
+} else if ($action == 'goRESULT'){
+        if (empty($_SESSION)) {
+                include './parts/Login.php';
+        }else {
+               include './parts/MENU.php';
+               include './parts/WEB-BACE/PAGE-REPORT/ASSESSMENT-RESULT.PHP';
+                
+        }
+} else {
+         if (empty($_SESSION)) {
+                $action='login';
+               include './parts/Login.php';
+        }else {
+               include './parts/body.php';}
 }
+
 //*****************************************************************
 include './parts/footer.php';
 ?> 

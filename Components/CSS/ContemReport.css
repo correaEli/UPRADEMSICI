@@ -1,0 +1,34 @@
+label {
+    float: left;
+}
+#semester label{
+    margin-right: 10px;
+}
+.rows{
+    display: block;
+    float: left;
+    width: 100%;
+}
+.colum {
+    display: block;
+    float: left;
+}
+#full{
+    width: 100%;
+    padding: 2%;
+}
+#PARCIAL50{
+    width: 50%;
+}
+#PARCIAL30{
+    width: 30%;
+    float: left;
+    display: block;
+    margin-left: 5px;
+}
+#parcial{
+    width: 20%;
+}
+.radio{
+    margin-left: 5px;
+}

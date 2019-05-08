@@ -16,13 +16,13 @@ body{
 					padding-left: 15px;
 		}
 .Nav{
-					width: 85%;
+					width: 75%;
 					height: auto;
 					float: left;
 					margin-top: -10PX;
 		}
 .barStatus{
-					width: 15%;
+					width: 25%;
 					height: auto;
 					float: left;
 					margin-top: 10PX;
@@ -30,9 +30,10 @@ body{
 		}
 a.botones_log {
 					float: right;
-					width: 100%;
+					width: 45%;
 					margin-right: 20px;
 		}
+a { color:black;}
 
 
 header label{
