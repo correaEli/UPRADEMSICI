@@ -43,6 +43,7 @@ if ($action == 'login') {
                 include './parts/Login.php';
         } else if ($u->validatePassword($_POST['password'])) {
                 $loggedUser= $u;
+                $Depa=$loggedUser->departament;
                 $_SESSION['userID'] = $u->id;
                 $_SESSION['loginTime'] = time();
                 $_SESSION['loginIP'] = $_SERVER['REMOTE_ADDR'];
