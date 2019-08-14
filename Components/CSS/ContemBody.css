@@ -80,13 +80,24 @@ main {
     text-transform: uppercase;
 }
 
+.Info {
+    display: block;
+    height: 42px;
+}
+
 .SubInfo {
+}
+
+.INPUT {
+    padding: 8px;
+    float: left;
 }
 
 .BTN {
     text-align: left;
     padding: 5px;
-    height: fix-contemt;
+    float: left;
+    display: block;
     border-width: 5px;
     border-color: rgb(118, 83, 7);
 }

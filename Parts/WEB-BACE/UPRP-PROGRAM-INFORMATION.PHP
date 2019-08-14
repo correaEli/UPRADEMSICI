@@ -1,4 +1,5 @@
-<div class= "Container">
+<div class="Container" style="background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/UPR_at_Ponce_Seal.svg/220px-UPR_at_Ponce_Seal.svg.png);
+background-size: 60% 95%; background-repeat: no-repeat; background-position: 90%; ">
             <div class="Title">
                 <a>UPR Ponce Business Program</a>
             </div>

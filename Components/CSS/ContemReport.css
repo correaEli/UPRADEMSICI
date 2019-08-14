@@ -15,19 +15,33 @@ label {
 }
 #full{
     width: 100%;
-    padding: 2%;
+    float: left;
+    display: block;
+    padding: 10px
 }
 #PARCIAL50{
     width: 50%;
+    float: left;
+    display: block;
+    padding: 10px
 }
 #PARCIAL30{
     width: 30%;
     float: left;
     display: block;
-    margin-left: 5px;
+    padding: 10px
 }
-#parcial{
+#PARCIAL25{
+    width: 25%;
+    float: left;
+    display: block;
+    padding: 10px
+}
+#PARCIAL{
     width: 20%;
+    float: left;
+    display: block;
+    padding: 10px
 }
 .radio{
     margin-left: 5px;

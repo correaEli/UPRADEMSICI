@@ -30,6 +30,30 @@
         </div>
         <div class="rows">
             <div class="colum" id="full">
+               <div class="text" id="outcome">
+                    <div class="custom-select" data-toggle="Select" data-target="#Selected" style="width:200px;">
+                        <select>
+                          <option value="00">Select car:</option>
+                            <?php
+                            $INFO = BAP::loadFromData();
+                            $i=0;
+                            foreach ($INFO->studentsLO as $rec=>$studentsLO){
+                                  $SLO_INFORMATION=  $INFO->SLO[$i]; $i++;
+                                ?>  <div class="">
+                                          <option type="button" class="BTN" ID="Selected">  
+                                          <?php
+                                           echo '<span style="color: black; font-weight: bold;"> ' . $studentsLO.': '.$SLO_INFORMATION . '</span>';
+                                         ?></option>
+                                    </div>
+                                <?php
+                            }?>
+                        </select>
+                      </div>
+               </div> 
+            </div>
+        </div>
+        <div class="rows">
+            <div class="colum" id="full">
                 <div class="text" id="components">
                     <label for="Components">Common Profesional Component (CPC)</label>
                     <div class="rows">
@@ -153,3 +177,12 @@
 
     
 </div>
+<?PHP
+if ($action == 'select'){
+    
+    
+        ?>
+        <div class="collapse" background-color:yellow><div>
+        <?php
+}
+?>

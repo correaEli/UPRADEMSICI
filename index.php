@@ -2,6 +2,7 @@
     $maxSessionTime = 60 * 30; //30 minutes
     $action = (isset($_GET['a'])) ? $_GET['a'] : '';
     $search = (isset($_GET['b'])) ? $_GET['b'] : '';
+    $BYmajor = (isset($_GET['c'])) ? $_GET['c'] : '';
     session_start();
     date_default_timezone_set('EST');
     include 'DB.php';
@@ -43,13 +44,12 @@ if ($action == 'login') {
                 include './parts/Login.php';
         } else if ($u->validatePassword($_POST['password'])) {
                 $loggedUser= $u;
-                $Depa=$loggedUser->departament;
                 $_SESSION['userID'] = $u->id;
                 $_SESSION['loginTime'] = time();
                 $_SESSION['loginIP'] = $_SERVER['REMOTE_ADDR'];
                 header('Location: index.php');
         } else {
-                showError('The entered password is incorrect!');
+                //showError('The entered password is incorrect!');
                 include './parts/Login.php';
         }
 } else if ($action == 'goUPRP-information') {
@@ -70,6 +70,7 @@ if ($action == 'login') {
         if (empty($_SESSION)) {
                 include './parts/Login.php';
         }else {
+                $Depa = $loggedUser->departament;
                 include './parts/MENU.php';
                 include './parts/WEB-BACE/ASSESSMENT-DATA.php';
         }
