@@ -17,6 +17,7 @@ class BAP {
     Public $BYmayor;
     public $Departament;
     
+/********************************************** Information load *****************************************************/  
    public static function loadFromInfomation($ID) {
          $records = getResultFromSQL('SELECT * FROM avaluo WHERE `ID`=?', [$ID]);        
        if (count($records) == 0) {
@@ -24,7 +25,7 @@ class BAP {
       }
         $record = $records[0];
         $u = new User();
-        $u->id = $ID;
+        $u->ID = $ID;
         $u->studentsLO= $record['studentsLO'];
         $u->SLO = $record['SLO_INFORMATION'];
         $u->curses1 = $record['Curses1'];
@@ -77,8 +78,5 @@ class BAP {
          return $u;
       }
 /********************************************** data collapse 2 *****************************************************/
-
-    
-
-   }
+}
 ?>

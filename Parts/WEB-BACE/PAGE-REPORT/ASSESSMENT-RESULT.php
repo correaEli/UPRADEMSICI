@@ -37,19 +37,36 @@ $INFO = BAP::loadFromInfomation($search);
                 </div>
             </div>
             <div class="rows">
-                <div class="colum" ID="PARCIAL25">
-                    <div class="text" id="">
-                        
+                <div class="colum" ID="PARCIAL33">
+                    <div class="text" id="SelectBox">
+                        <?php if ($INFO->direct==1){ ?>
+                        <div Class="Checkbox"><input type="checkbox" name="Direct" value="Direct" checked> Direct</div>
+                        <?php } else { ?>
+                        <div Class="Checkbox"><input type="checkbox" name="Direct" value="Direct"> Direct</div>
+                        <?php } if ($INFO->indirec==1){ ?>
+                        <div Class="Checkbox"><input type="checkbox" name="Indirect" value="Indirect" checked> Indirect</div>
+                        <?php } else { ?>
+                        <div Class="Checkbox"><input type="checkbox" name="Indirect" value="Indirect"> Indirect</div>
+                        <?php } ?>
                     </div>
                 </div>
-                <div class="colum" ID="PARCIAL25">
-                    <div class="text" id="">
-                        
+                <div class="colum" ID="PARCIAL33">
+                    <div class="text" id="SelectBox">
+                        <?php if ($INFO->external==1){ ?>
+                        <div Class="Checkbox"><input  type="checkbox" name="Direct" value="Direct" checked> External</div>
+                        <?php } else { ?>
+                        <div Class="Checkbox"><input  type="checkbox" name="Direct" value="Direct"> External</div>
+                        <?php } if ($INFO->internal==1){ ?>
+                        <div Class="Checkbox"><input  type="checkbox" name="Indirect" value="Indirect" checked> Internal</div>
+                        <?php } else { ?>
+                        <div Class="Checkbox"><input  type="checkbox" name="Indirect" value="Indirect"> Internal</div>
+                        <?php } ?>
                     </div>
                 </div>
-                <div class="colum" ID="PARCIAL25">
-                    <div class="text" id="">
-            
+                <div class="colum" ID="PARCIAL33">
+                    <div class="text" id="SelectBox">
+                        <div Class="Checkbox"><input type="checkbox" name="Direct" value="Direct"> Formative</div>
+                        <div Class="Checkbox"><input type="checkbox" name="Indirect" value="Indirect"> Summative</div>
                     </div>
                 </div>
             </div>
@@ -70,12 +87,23 @@ $INFO = BAP::loadFromInfomation($search);
                 </div>
             </div>
             <div class="rows">
+                <?php $i=0; while($i <5){?>
                 <div class="colum" ID="PARCIAL25">
                     <div class="text" id="results">
                         <label>Academic Year : </label>
                         <?php echo $INFO->year1 .' / '. $INFO->year2?>
+                        <?php /*if (){ ?>
+                        <div Class="Checkbox"><input  type="checkbox" name="Semester" value="1st Sem" checked> External</div>
+                        <?php } else { ?>
+                        <div Class="Checkbox"><input  type="checkbox" name="Semester" value="1st Sem"> External</div>
+                        <?php } if (){ ?>
+                        <div Class="Checkbox"><input  type="checkbox" name="Semester" value="2nd Sem" checked> Internal</div>
+                        <?php } else { ?>
+                        <div Class="Checkbox"><input  type="checkbox" name="Indirect" value="2nd Sem"> Internal</div>
+                        <?php } */?>
                     </div>
                 </div>
+                <?php $i++;}?>
             </div>
         </div>   
 </div>
