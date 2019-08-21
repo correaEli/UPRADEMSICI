@@ -59,7 +59,6 @@ main {
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     text-decoration: none;
 }
-    
     /******************************ASSESSMENT BODY**************************************/
 .Container {
     width: 80%;
@@ -74,6 +73,8 @@ main {
 
 .Title {
     text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .Title a {

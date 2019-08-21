@@ -1,5 +1,7 @@
 <div class="Container">
-    
+        <?php 
+  $gun='no funciona';
+  ?>
     <div class="Title">
         Assessment Report
     </div>
@@ -33,14 +35,14 @@
                <div class="text" id="outcome">
                     <div class="custom-select" data-toggle="Select" data-target="#Selected" style="width:100%;">
                         <select style="width:100%;">
-                          <option class="STN" ID="Selected" value="00">Select car:</option>
+                          <option class="STN" ID="Selected" value="00">Selects Learning Outcome:</option>
                             <?php
                             $INFO = BAP::loadFromData();
                             $i=0;
                             foreach ($INFO->studentsLO as $rec=>$studentsLO){
                                   $SLO_INFORMATION=  $INFO->SLO[$i];
                                 ?>  <div class="">
-                                          <option style="width:100%" class="STN" ID="Selected" value="
+                                          <option style="width:100%" class="STN" ID="Selected" onselect="getvalue()" value="
                                           <?php echo $INFO->ID[$i]?>">
                                           <?php
                                            echo '<span style="color: black; font-weight: bold;"> ' . $studentsLO.': '.$SLO_INFORMATION . '</span>';
@@ -61,7 +63,7 @@
                                             $centinela=$CPC;
                                             ?>
                                             <div class="SubInfo">
-                                            <option class="STN" ID="Selected" value="00"><?php echo $centinela?></option>
+                                            <option  Style="text-align: center" class="STN" ID="Selected" value="00" disabled><?php echo $centinela?></option>
                                             </div>
                                     <?php
                                     }?><div class="">
@@ -214,7 +216,7 @@
         <div class="rows">
             <div class="colum" ID="PARCIAL50" >
                 <div class="text">
-                    <label for="comment"> Submitted by</label>
+                    <label for="comment"> Submitted by</label>     <?php echo  $gun;?>
                     <input type="text" class="form-control" ID="Input-Form" > 
                 </div>
             </div>
@@ -230,6 +232,14 @@
 
     
 </div>
+<script>
+function getvalue() {
+    <?php 
+  $gun='funciona';
+  ?>
+}
+</script>
+
 <?PHP
 if ($action == 'select'){
     
