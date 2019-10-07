@@ -1,7 +1,5 @@
 <div class="Container">
-        <?php 
-  $gun='no funciona';
-  ?>
+  
     <div class="Title">
         Assessment Report
     </div>
@@ -34,7 +32,7 @@
             <div class="colum" id="full">
                <div class="text" id="outcome">
                     <div class="custom-select" data-toggle="Select" data-target="#Selected" style="width:100%;">
-                        <select style="width:100%;">
+                        <select class="outpost" style="width:100%;">
                           <option class="STN" ID="Selected" value="00">Selects Learning Outcome:</option>
                             <?php
                             $INFO = BAP::loadFromData();
@@ -42,7 +40,7 @@
                             foreach ($INFO->studentsLO as $rec=>$studentsLO){
                                   $SLO_INFORMATION=  $INFO->SLO[$i];
                                 ?>  <div class="">
-                                          <option style="width:100%" class="STN" ID="Selected" onselect="getvalue()" value="
+                                          <option style="width:100%" class="STN" ID="Selected" value="
                                           <?php echo $INFO->ID[$i]?>">
                                           <?php
                                            echo '<span style="color: black; font-weight: bold;"> ' . $studentsLO.': '.$SLO_INFORMATION . '</span>';
@@ -165,7 +163,7 @@
             <div class="colum" ID="full" >
                 <div class="text">
                     <label for="comment">performance measure:</label>
-                    <textarea class="form-control" rows="5" id="performance"></textarea>  
+                    <textarea class="form-control" rows="5" id="performance"><?php $InfoSearch->Success ?></textarea>  
                 </div>
             </div>
             <div class="colum" ID="full" >
@@ -216,7 +214,7 @@
         <div class="rows">
             <div class="colum" ID="PARCIAL50" >
                 <div class="text">
-                    <label for="comment"> Submitted by</label>     <?php echo  $gun;?>
+                    <label for="comment"> Submitted by</label>     
                     <input type="text" class="form-control" ID="Input-Form" > 
                 </div>
             </div>
@@ -232,20 +230,13 @@
 
     
 </div>
-<script>
-function getvalue() {
-    <?php 
-  $gun='funciona';
-  ?>
-}
+<script type="text/javascript">
+$(document).ready(function(){
+    $("select.outpost").change(function(){
+        var selectedOutpost = $(this).children("option:selected").val();
+        
+        alert("You have selected the outpost - " + selectedOutpost);
+        
+    });
+});
 </script>
-
-<?PHP
-if ($action == 'select'){
-    
-    
-        ?>
-        <div class="collapse" background-color:yellow><div>
-        <?php
-}
-?>
