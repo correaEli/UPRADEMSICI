@@ -1,3 +1,10 @@
+<?php
+if(isset($_POST['submit'])){
+        $selected_val = $_POST['outpost'];  // Storing Selected Value In Variable
+        echo "You have selected :" .$selected_val;  // Displaying Selected Value
+        $selec = BAP::loadFromInfomation($selected_val);
+    }
+?>
 <div class="Container">
   
     <div class="Title">
@@ -5,17 +12,17 @@
     </div>
     
 <div class="information">
-    <form method="post" action="">
+    <form method="post" action="#">
         <div class="rows">
             <div class="colum" ID="PARCIAL50">
                 <div class="text" id="Academic">
                     <label for="Academic">Academic Year</label>
                     <input type="text" class="form-control" ID="PARCIAL30" ID name="Year" 
                            placeholder="Enter Academic year" value="">
-                    <input type="text" class="form-control" ID="PARCIAL30" name="action">
+                    <input type="text" class="form-control" ID="PARCIAL30" name="Year2"placeholder="" value="">
                 </div>
             </div>
-            <div class="colum" ID="PARCIAL50">
+            <div class="colum" ID="PARCIAL25">
                 <div class="text" id="semester">
                     <label for="semester">Semester</label>
                     <div class="radio">
@@ -27,21 +34,27 @@
                     
                 </div>
             </div>
+            <div class="colum" ID="PARCIAL">
+                <div class="text" id="semester">
+                    
+                    <input type="submit" name="submit" value="Get Selected Values" />
+                    
+                </div>
+            </div>
         </div>
         <div class="rows">
             <div class="colum" id="full">
                <div class="text" id="outcome">
                     <div class="custom-select" data-toggle="Select" data-target="#Selected" style="width:100%;">
-                        <select class="outpost" style="width:100%;">
-                          <option class="STN" ID="Selected" value="00">Selects Learning Outcome:</option>
+                        <select name="outpost" class="outpost" style="width:100%;">
+                          <option class="STN" ID="Selected" value="0">Selects Learning Outcome:</option>
                             <?php
                             $INFO = BAP::loadFromData();
                             $i=0;
                             foreach ($INFO->studentsLO as $rec=>$studentsLO){
                                   $SLO_INFORMATION=  $INFO->SLO[$i];
                                 ?>  <div class="">
-                                          <option style="width:100%" class="STN" ID="Selected" value="
-                                          <?php echo $INFO->ID[$i]?>">
+                                          <option style="width:100%" class="STN" ID="Selected" value="<?php echo $INFO->ID[$i]?>">
                                           <?php
                                            echo '<span style="color: black; font-weight: bold;"> ' . $studentsLO.': '.$SLO_INFORMATION . '</span>';
                                          ?></option>
@@ -146,12 +159,15 @@
                         <div class="colum" ID="PARCIAL" >
                         <label><input type="checkbox" value="Sumative">Sumative</label>
                         </div>
-                        <div class="colum" ID="PARCIAL" >
-                        <label><input type="checkbox" value="External">External</label>
-                        </div>
-                        <div class="colum" ID="PARCIAL" >
-                        <label><input type="checkbox" value="Internal">Internal</label>
-                        </div>
+                        <?php if ($selec->external==1){ ?>
+                        <div class="colum" ID="PARCIAL" ><label><input  type="checkbox" name="Direct" value="Direct" checked> External</label></div>
+                        <?php } else { ?>
+                        <div class="colum" ID="PARCIAL" ><label><input  type="checkbox" name="Direct" value="Direct"> External</label></div>
+                        <?php } if ($selec->internal==1){ ?>
+                        <div class="colum" ID="PARCIAL" ><label><input  type="checkbox" name="Indirect" value="Indirect" checked> Internal</label></div>
+                        <?php } else { ?>
+                        <div class="colum" ID="PARCIAL" ><label><input  type="checkbox" name="Indirect" value="Indirect"> Internal</label></div>
+                        <?php } ?>
                         <div class="colum" ID="PARCIAL" >
                         <label><input type="checkbox" value="Comparative">Comparative</label>
                         </div>
@@ -163,7 +179,7 @@
             <div class="colum" ID="full" >
                 <div class="text">
                     <label for="comment">performance measure:</label>
-                    <textarea class="form-control" rows="5" id="performance"><?php $InfoSearch->Success ?></textarea>  
+                    <textarea class="form-control" rows="5" id="performance"><?php echo $selec->Success ?></textarea>  
                 </div>
             </div>
             <div class="colum" ID="full" >
