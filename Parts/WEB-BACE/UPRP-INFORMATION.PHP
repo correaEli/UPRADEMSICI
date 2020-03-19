@@ -39,6 +39,10 @@ background-size: 60% 95%; background-repeat: no-repeat; background-position: 90%
             <div class="Info">
               <a href="http://www.uprp.edu/"><button type="button" ID="BTN1" class="BTN" >Website</button></a>
             </div>
+            
+            <div class="Info">
+              <a><button type="button" class="BTN" ID="BTN1" onclick="<?php BAPREPORT::UpLoadData("null,'2','2016','2017','2','78','L-03','30','prueba con botton','el canoso','2019-08-19'");?>">Strategic Plan</button></a>
+            </div>
                
         </div><!-- Col -->
 <script>

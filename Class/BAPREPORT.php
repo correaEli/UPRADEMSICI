@@ -40,14 +40,14 @@ class BAPREPORT {
 /**************************************** Information load FROM ID **************************************************/      
 /********************************** Information load FROM ID FROM AVALUO ********************************************/
 
-    public static function loadFromDATA($IDfromAVALUO) {
-      $records = getResultFromSQL('SELECT * FROM `result` WHERE `IDFROMAVALUO`=? ORDER BY `AYEAR` DESC', [$IDfromAVALUO]);  
-         if (count($records) == 0) {
-              return null;
+   public static function loadFromDATA($IDfromAVALUO) {
+         $records = getResultFromSQL('SELECT * FROM `result` WHERE `IDFROMAVALUO`=? ORDER BY `AYEAR` DESC', [$IDfromAVALUO]);  
+            if (count($records) == 0) {
+                 return null;
             }
-
-        $record = $records[0];
-         $u = new User();
+   
+         $record = $records[0];
+            $u = new User();
             foreach ($records as $rec){
                $u->ID[] = $rec['ID'];
                $u->IDFROMAVALUO[]= $rec['IDFROMAVALUO'];
@@ -61,8 +61,13 @@ class BAPREPORT {
                $u->Submitted[] = $rec['Submitted By'];
                $u->Date[] = $rec['Date'];
             }
-            return $u;
+         return $u;
       }
 /************************************* Information load FROM ID FROM AVALUO *****************************************/
-  
+/************************************* PRUEBA *****************************************/
+   public static function UpLoadData($N,$a,$b,$c,$D,$e,$f,$g,$h,$i,$j) {
+         $records = getResultFromSQL("INSERT INTO `result` (`ID`, `IDFROMAVALUO`, `AYEAR`, `BYEAR`, `Semester`, `Result`, `Section`, `# of students`, `Analysis and actions`, `Submitted By`, `Date`)
+                                     VALUES ('?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?')", [$N,$a,$b,$c,$D,$e,$f,$g,$h,$i,$j]);  
+   }
+   /************************************* PRUEBA *****************************************/
 }
