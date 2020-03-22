@@ -65,9 +65,10 @@ class BAPREPORT {
       }
 /************************************* Information load FROM ID FROM AVALUO *****************************************/
 /************************************* PRUEBA *****************************************/
-   public static function UpLoadData($N,$a,$b,$c,$D,$e,$f,$g,$h,$i,$j) {
+   public static function UpLoadData($a,$b,$c,$d,$e,$f,$g,$h,$i,$j) {
          $records = getResultFromSQL("INSERT INTO `result` (`ID`, `IDFROMAVALUO`, `AYEAR`, `BYEAR`, `Semester`, `Result`, `Section`, `# of students`, `Analysis and actions`, `Submitted By`, `Date`)
-                                     VALUES ('?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?')", [$N,$a,$b,$c,$D,$e,$f,$g,$h,$i,$j]);  
+                                     VALUES (NULL, '$a', '$b', '$c', '$d', '$e', '$f', '$g', '$h', '$i', '$j')",[]);
+         return;
    }
    /************************************* PRUEBA *****************************************/
 }

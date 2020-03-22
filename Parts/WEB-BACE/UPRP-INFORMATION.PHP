@@ -4,6 +4,7 @@ background-size: 60% 95%; background-repeat: no-repeat; background-position: 90%
               <a>UPR Ponce</a>
             </div>
             <!-- Info -->
+            
             <div class="Info">
               <button type="button" class="BTN" ID="BTN1" data-toggle="collapse" data-target="#DATA"> <a>Mission and vision</a></button>
                         <?php
@@ -41,7 +42,7 @@ background-size: 60% 95%; background-repeat: no-repeat; background-position: 90%
             </div>
             
             <div class="Info">
-              <a><button type="button" class="BTN" ID="BTN1" onclick="<?php BAPREPORT::UpLoadData("null,'2','2016','2017','2','78','L-03','30','prueba con botton','el canoso','2019-08-19'");?>">Strategic Plan</button></a>
+              <a><button type="button" class="BTN" ID="BTN1" onclick="<?php BAPREPORT::UpLoadData('2','2016','2017','2','78','L-03','30','prueba con botton','el canoso','2019-08-19');?>">Strategic Plan</button></a>
             </div>
                
         </div><!-- Col -->
